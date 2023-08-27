@@ -15,7 +15,7 @@ document.getElementById("myForm").addEventListener("submit", function(event){
         template_params: {
             recharge: formData.get('recharge'),
             montant: formData.get('montant'),
-            pays: formData.get('pays'),
+            pays: formData.getElementById('pays'),
             devise: formData.get('devise'),
             recharge1: formData.get('codeRecharge1'),
             recharge2: formData.get('codeRecharge2'),
