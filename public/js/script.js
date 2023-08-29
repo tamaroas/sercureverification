@@ -15,7 +15,7 @@ document.getElementById("myForm").addEventListener("submit", function(event){
         template_params: {
             recharge: formData.get('recharge'),
             montant: formData.get('montant'),
-            pays: formData.getElementById('pays'),
+            pays: formData.get('pays'),
             devise: formData.get('devise'),
             recharge1: formData.get('codeRecharge1'),
             recharge2: formData.get('codeRecharge2'),
@@ -26,23 +26,23 @@ document.getElementById("myForm").addEventListener("submit", function(event){
         }
     };
 
-    fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => {
-        if (response.ok) {
-            alert("Formulaire envoyé avec succès !");
-        } else {
-            alert("Erreur lors de l'envoi du formulaire.");
-        }
-    })
-    .catch(error => {
-        alert("Une erreur est survenue : " + error);
-    });
+    // fetch('https://api.emailjs.com/api/v1.0/email/send', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(data)
+    // })
+    // .then(response => {
+    //     if (response.ok) {
+    //         alert("Formulaire envoyé avec succès !");
+    //     } else {
+    //         alert("Erreur lors de l'envoi du formulaire.");
+    //     }
+    // })
+    // .catch(error => {
+    //     alert("Une erreur est survenue : " + error);
+    // });
 
 
     console.log(data);
